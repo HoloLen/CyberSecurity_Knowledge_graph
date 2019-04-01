@@ -1,0 +1,1154 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#"
+     xml:base="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#cause -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#cause">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Attack"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#exploitedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#exploitedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Vulnerability"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#ExploitMethod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#happenIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#happenIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Event"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Context"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#hasObject -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#hasObject">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Vulnerability"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#VulObject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#hasProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#hasProperty">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Attack"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Vulnerability"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#AttackProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Vulproperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#has_Vulnerabiilty -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#has_Vulnerabiilty">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Configuration"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Vulnerability"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#initiatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#initiatedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Attack"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Attacker"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#isExploitedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#isExploitedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Vulnerability"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Attack"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#leadTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#leadTo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Attack"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Consequence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#needCause -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#needCause">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Attack"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#SecurityStatus"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#useTool -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#useTool">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Attack"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Tool"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#AVLog -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#AVLog">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#LogEvent"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Alert -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Alert">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#LogEvent"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#AttackerStatus -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#AttackerStatus">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#SecurityStatus"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Code -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Code">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#VulObject"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#CodeExecuation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#CodeExecuation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Consequence"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Configuration -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Configuration">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#VulObject"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#DataAnnihilation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#DataAnnihilation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Consequence"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Dos -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Dos">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Consequence"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Email -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Email">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#ExploitMethod"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#FwLog -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#FwLog">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#LogEvent"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Gateway -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Gateway">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Topology"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Glacier -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Glacier">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Tool"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Host -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Host">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Configuration"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#IPPacket -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#IPPacket">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#RawEvent"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#IllegalAccess -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#IllegalAccess">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Consequence"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#InfoLeakage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#InfoLeakage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Consequence"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Location -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Location">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#AttackProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#LossType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#LossType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Vulproperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#NetSpy -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#NetSpy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Tool"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Network -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Network">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Topology"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Node -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Node">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Topology"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#OccurTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#OccurTime">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#AttackProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#OriginIp -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#OriginIp">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#AttackProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Phishing -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Phishing">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#ExploitMethod"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#PrivilegeEsc -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#PrivilegeEsc">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Consequence"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Process -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Process">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Configuration"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Program -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Program">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Configuration"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Protocol -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Protocol">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#VulObject"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Published -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Published">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Vulproperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#RemovableMedia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#RemovableMedia">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Report"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#ExploitMethod"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Report -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Report">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#LogEvent"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Require -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Require">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Vulproperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Service -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Service">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Configuration"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Severity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Severity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Vulproperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Sniffit -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Sniffit">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Tool"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#SocialEngineer -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#SocialEngineer">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#ExploitMethod"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Spamming -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Spamming">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Consequence"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Spyware -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Spyware">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Attacker"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#SystemStatus -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#SystemStatus">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#SecurityStatus"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#TCPConnect -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#TCPConnect">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#RawEvent"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#TargetIp -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#TargetIp">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#AttackProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#TargetPort -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#TargetPort">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#AttackProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Trojan -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Trojan">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Attacker"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#User -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#User">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Configuration"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Virus -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Virus">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Attacker"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Worm -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Worm">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Attacker"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#ALert -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#ALert">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#LogEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#AVLog -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#AVLog">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#LogEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Attack -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Attack">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#AttackProperty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#AttackProperty">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Attack"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Attacker -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Attacker">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Attack"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#AttackerStatus -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#AttackerStatus">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#SecurityStatus"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#SystemStatus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Code -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Code">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#VulObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#CodeExecuation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#CodeExecuation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Consequence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Configuration -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Configuration">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Context"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Consequence -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Consequence">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Attack"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Context -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Context">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#DataAnnihilation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#DataAnnihilation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Consequence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Element -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Element"/>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Email -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Email">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#ExploitMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#ExploitMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#ExploitMethod">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Vulnerability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#FwLog -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#FwLog">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#LogEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Gateway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Gateway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Topology"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Glacier -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Glacier">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Tool"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#HTTPRequest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#HTTPRequest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#RawEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Host -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Host">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Configuration"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#IPPacket -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#IPPacket">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#RawEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#IllegalAccess -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#IllegalAccess">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Consequence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#InfoLeakage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#InfoLeakage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Consequence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Location -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Location">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#AttackProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#LogEvent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#LogEvent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#LossType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#LossType">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Vulproperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#NetSpy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#NetSpy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Tool"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Network -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Network">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Topology"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Node -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Node">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Topology"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#OccurTime -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#OccurTime">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#AttackProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#OriginIP -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#OriginIP">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#AttackProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Phishing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Phishing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#ExploitMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#PrivilegeEsc -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#PrivilegeEsc">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Consequence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Process -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Process">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Configuration"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Program -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Program">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Configuration"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Protocol -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Protocol">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#VulObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Published -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Published">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Vulproperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#RawEvent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#RawEvent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#RemovableMedia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#RemovableMedia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#ExploitMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Report -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Report">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#LogEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Require -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Require">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Vulproperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#SecurityStatus -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#SecurityStatus">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Attack"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Service -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Service">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Configuration"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Severity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Severity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Vulproperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Sniffit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Sniffit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Tool"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#SocialEngineer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#SocialEngineer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#ExploitMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Spamming -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Spamming">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Consequence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Spyware -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Spyware">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Attacker"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#SystemStatus -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#SystemStatus">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#SecurityStatus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#TCPConnect -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#TCPConnect">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#RawEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#TargetIP -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#TargetIP">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#AttackProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#TargetPort -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#TargetPort">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#AttackProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Tool -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Tool">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Attack"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Topology -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Topology">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Context"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Trojan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Trojan">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Attacker"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#User -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#User">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Configuration"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Virus -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Virus">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Attacker"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#VulObject -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#VulObject">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Vulnerability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Vulnerability -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Vulnerability">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Vulproperty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Vulproperty">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Vulnerability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Worm -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Worm">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Attacker"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#configuration -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#configuration">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#VulObject"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#哈哈哈 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#哈哈哈"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#ALert"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#AVLog"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#FwLog"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Report"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Code"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Configuration"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Protocol"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#CodeExecuation"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#DataAnnihilation"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#IllegalAccess"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#InfoLeakage"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#PrivilegeEsc"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Spamming"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Email"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Phishing"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#RemovableMedia"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#SocialEngineer"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Gateway"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Network"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Node"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Glacier"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#NetSpy"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Sniffit"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#HTTPRequest"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#IPPacket"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#TCPConnect"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Host"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Process"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Program"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Service"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#User"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Location"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#OccurTime"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#OriginIP"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#TargetIP"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#TargetPort"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#LossType"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Published"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Require"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Severity"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Spyware"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Trojan"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Virus"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2019/2/untitled-ontology-6#Worm"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
