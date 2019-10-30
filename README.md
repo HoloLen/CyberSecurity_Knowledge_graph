@@ -1,2 +1,2 @@
-# Attack-ontology
-攻防本体
+# cybersecurity knowledge graph
+
