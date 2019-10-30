@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1555658303526" name="http://www.ida.liu.se/~iislab/projects/secont/MemoryProtection.owl" uri="MemoryProtection.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1555658303526" name="http://www.ida.liu.se/~iislab/projects/secont/SecurityViews.owl" uri="Security%20Views%20Ontology/SecurityViews.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1555658303526" name="http://www.ida.liu.se/~iislab/projects/secont/SourceCodeAnalysis.owl" uri="Source%20Code%20Analysis%20Ontology/SourceCodeAnalysis.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1555658303526" name="http://www.semanticweb.org/administrator/ontologies/2019/3/untitled-ontology-36" uri="Main%20Security%20ontology/semi-vulnerability.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1555658303526" name="shadowed:http://www.ida.liu.se/~iislab/projects/secont/MemoryProtection.owl" uri="Memory%20Protection%20Ontology/MemoryProtection.owl"/>
+    </group>
+</catalog>
