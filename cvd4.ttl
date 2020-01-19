@@ -1,0 +1,300 @@
+@prefix map: <#> .
+@prefix db: <> .
+@prefix vocab: <vocab/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix jdbc: <http://d2rq.org/terms/jdbc/> .
+
+map:database a d2rq:Database;
+	d2rq:jdbcDriver "com.mysql.jdbc.Driver";
+	d2rq:jdbcDSN "jdbc:mysql:///cvd";
+	d2rq:username "root";
+	d2rq:password "root";
+	jdbc:autoReconnect "true";
+	jdbc:zeroDateTimeBehavior "convertToNull";
+	.
+
+# Table cvss
+map:cvss a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "cvss/@@cvss.cvss_id@@";
+	d2rq:class vocab:cvss;
+	d2rq:classDefinitionLabel "cvss";
+	.
+map:cvss__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:cvss;
+	d2rq:property rdfs:label;
+	d2rq:pattern "cvss #@@cvss.cvss_id@@";
+	.
+map:cvss_cvss_id a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:cvss;
+	d2rq:property vocab:cvss_cvss_id;
+	d2rq:propertyDefinitionLabel "cvss cvss_id";
+	d2rq:column "cvss.cvss_id";
+	d2rq:datatype xsd:integer;
+	.
+map:cvss_cvss_score a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:cvss;
+	d2rq:property vocab:cvss_cvss_score;
+	d2rq:propertyDefinitionLabel "cvss cvss_score";
+	d2rq:column "cvss.cvss_score";
+	d2rq:datatype xsd:double;
+	.
+map:cvss_cvss_base_score a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:cvss;
+	d2rq:property vocab:cvss_cvss_base_score;
+	d2rq:propertyDefinitionLabel "cvss cvss_base_score";
+	d2rq:column "cvss.cvss_base_score";
+	d2rq:datatype xsd:double;
+	.
+map:cvss_cvss_impact_subscore a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:cvss;
+	d2rq:property vocab:cvss_cvss_impact_subscore;
+	d2rq:propertyDefinitionLabel "cvss cvss_impact_subscore";
+	d2rq:column "cvss.cvss_impact_subscore";
+	d2rq:datatype xsd:double;
+	.
+map:cvss_cvss_exploit_subscore a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:cvss;
+	d2rq:property vocab:cvss_cvss_exploit_subscore;
+	d2rq:propertyDefinitionLabel "cvss cvss_exploit_subscore";
+	d2rq:column "cvss.cvss_exploit_subscore";
+	d2rq:datatype xsd:double;
+	.
+map:cvss_cvss_vector a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:cvss;
+	d2rq:property vocab:cvss_cvss_vector;
+	d2rq:propertyDefinitionLabel "cvss cvss_vector";
+	d2rq:column "cvss.cvss_vector";
+	.
+
+# Table ref
+map:ref a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "ref/@@ref.ref_id@@/@@ref.refss_id@@";
+	d2rq:class vocab:ref;
+	d2rq:classDefinitionLabel "ref";
+	.
+map:ref__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:ref;
+	d2rq:property rdfs:label;
+	d2rq:pattern "ref #@@ref.ref_id@@/@@ref.refss_id@@";
+	.
+map:ref_ref_id a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:ref;
+	d2rq:property vocab:ref_ref_id;
+	d2rq:propertyDefinitionLabel "ref ref_id";
+	d2rq:column "ref.ref_id";
+	d2rq:datatype xsd:integer;
+	.
+map:ref_ref_source a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:ref;
+	d2rq:property vocab:ref_ref_source;
+	d2rq:propertyDefinitionLabel "ref ref_source";
+	d2rq:column "ref.ref_source";
+	.
+map:ref_ref_url a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:ref;
+	d2rq:property vocab:ref_ref_url;
+	d2rq:propertyDefinitionLabel "ref ref_url";
+	d2rq:column "ref.ref_url";
+	.
+map:ref_ref_patch a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:ref;
+	d2rq:property vocab:ref_ref_patch;
+	d2rq:propertyDefinitionLabel "ref ref_patch";
+	d2rq:column "ref.ref_patch";
+	d2rq:datatype xsd:integer;
+	.
+map:ref_ref_adv a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:ref;
+	d2rq:property vocab:ref_ref_adv;
+	d2rq:propertyDefinitionLabel "ref ref_adv";
+	d2rq:column "ref.ref_adv";
+	d2rq:datatype xsd:integer;
+	.
+map:ref_ref_text a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:ref;
+	d2rq:property vocab:ref_ref_text;
+	d2rq:propertyDefinitionLabel "ref ref_text";
+	d2rq:column "ref.ref_text";
+	.
+map:ref_refss_id a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:ref;
+	d2rq:property vocab:ref_refss_id;
+	d2rq:propertyDefinitionLabel "ref refss_id";
+	d2rq:column "ref.refss_id";
+	d2rq:datatype xsd:integer;
+	.
+
+# Table soft
+map:soft a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "soft/@@soft.soft_id@@";
+	d2rq:class vocab:soft;
+	d2rq:classDefinitionLabel "soft";
+	.
+map:soft__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:soft;
+	d2rq:property rdfs:label;
+	d2rq:pattern "soft #@@soft.soft_id@@";
+	.
+map:soft_soft_id a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:soft;
+	d2rq:property vocab:soft_soft_id;
+	d2rq:propertyDefinitionLabel "soft soft_id";
+	d2rq:column "soft.soft_id";
+	d2rq:datatype xsd:integer;
+	.
+map:soft_soft_name a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:soft;
+	d2rq:property vocab:soft_soft_name;
+	d2rq:propertyDefinitionLabel "soft soft_name";
+	d2rq:column "soft.soft_name";
+	.
+
+# Table vendor
+map:vendor a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "vendor/@@vendor.vendor_ids@@";
+	d2rq:class vocab:vendor;
+	d2rq:classDefinitionLabel "vendor";
+	.
+map:vendor__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:vendor;
+	d2rq:property rdfs:label;
+	d2rq:pattern "vendor #@@vendor.vendor_ids@@";
+	.
+map:vendor_vendor_id a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:vendor;
+	d2rq:property vocab:vendor_vendor_id;
+	d2rq:propertyDefinitionLabel "vendor vendor_id";
+	d2rq:column "vendor.vendor_id";
+	d2rq:datatype xsd:integer;
+	.
+map:vendor_vendor_name a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:vendor;
+	d2rq:property vocab:vendor_vendor_name;
+	d2rq:propertyDefinitionLabel "vendor vendor_name";
+	d2rq:column "vendor.vendor_name";
+	.
+map:vendor_vendor_ids a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:vendor;
+	d2rq:property vocab:vendor_vendor_ids;
+	d2rq:propertyDefinitionLabel "vendor vendor_ids";
+	d2rq:column "vendor.vendor_ids";
+	d2rq:datatype xsd:integer;
+	.
+
+# Table vendor_to_soft (n:m)
+map:vendor_to_soft__link a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:soft;
+	d2rq:property vocab:vendor_to_soft;
+	d2rq:refersToClassMap map:vendor;
+	d2rq:join "vendor_to_soft.soft_id => soft.soft_id";
+	d2rq:join "vendor_to_soft.vendor_id => vendor.vendor_id";
+	.
+
+# Table vulnerability
+map:vulnerability a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "vulnerability/@@vulnerability.vulnerability_id@@";
+	d2rq:class vocab:vulnerability;
+	d2rq:classDefinitionLabel "vulnerability";
+	.
+map:vulnerability__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:vulnerability;
+	d2rq:property rdfs:label;
+	d2rq:pattern "vulnerability #@@vulnerability.vulnerability_id@@";
+	.
+map:vulnerability_vulnerability_id a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:vulnerability;
+	d2rq:property vocab:vulnerability_vulnerability_id;
+	d2rq:propertyDefinitionLabel "vulnerability vulnerability_id";
+	d2rq:column "vulnerability.vulnerability_id";
+	d2rq:datatype xsd:integer;
+	.
+map:vulnerability_vulnerability_type a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:vulnerability;
+	d2rq:property vocab:vulnerability_vulnerability_type;
+	d2rq:propertyDefinitionLabel "vulnerability vulnerability_type";
+	d2rq:column "vulnerability.vulnerability_type";
+	.
+map:vulnerability_vulnerability_name a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:vulnerability;
+	d2rq:property vocab:vulnerability_vulnerability_name;
+	d2rq:propertyDefinitionLabel "vulnerability vulnerability_name";
+	d2rq:column "vulnerability.vulnerability_name";
+	.
+map:vulnerability_vulnerability_seq a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:vulnerability;
+	d2rq:property vocab:vulnerability_vulnerability_seq;
+	d2rq:propertyDefinitionLabel "vulnerability vulnerability_seq";
+	d2rq:column "vulnerability.vulnerability_seq";
+	.
+map:vulnerability_vulnerability_published a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:vulnerability;
+	d2rq:property vocab:vulnerability_vulnerability_published;
+	d2rq:propertyDefinitionLabel "vulnerability vulnerability_published";
+	d2rq:column "vulnerability.vulnerability_published";
+	.
+map:vulnerability_vulnerability_modified a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:vulnerability;
+	d2rq:property vocab:vulnerability_vulnerability_modified;
+	d2rq:propertyDefinitionLabel "vulnerability vulnerability_modified";
+	d2rq:column "vulnerability.vulnerability_modified";
+	.
+map:vulnerability_vulnerability_severity a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:vulnerability;
+	d2rq:property vocab:vulnerability_vulnerability_severity;
+	d2rq:propertyDefinitionLabel "vulnerability vulnerability_severity";
+	d2rq:column "vulnerability.vulnerability_severity";
+	.
+
+# Table vulnerability_to_ref
+map:vulnerability_to_ref a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "vulnerability_to_ref/@@vulnerability_to_ref.ref_id@@/@@vulnerability_to_ref.vulnerability_id@@";
+	d2rq:class vocab:vulnerability_to_ref;
+	d2rq:classDefinitionLabel "vulnerability_to_ref";
+	.
+map:vulnerability_to_ref__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:vulnerability_to_ref;
+	d2rq:property rdfs:label;
+	d2rq:pattern "vulnerability_to_ref #@@vulnerability_to_ref.ref_id@@/@@vulnerability_to_ref.vulnerability_id@@";
+	.
+map:vulnerability_to_ref_ref_id a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:vulnerability_to_ref;
+	d2rq:property vocab:vulnerability_to_ref_ref_id;
+	d2rq:propertyDefinitionLabel "vulnerability_to_ref ref_id";
+	d2rq:column "vulnerability_to_ref.ref_id";
+	d2rq:datatype xsd:integer;
+	.
+map:vulnerability_to_ref_vulnerability_id a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:vulnerability_to_ref;
+	d2rq:property vocab:vulnerability_to_ref_vulnerability_id;
+	d2rq:propertyDefinitionLabel "vulnerability_to_ref vulnerability_id";
+	d2rq:column "vulnerability_to_ref.vulnerability_id";
+	d2rq:datatype xsd:integer;
+	.
+
+# Table vulnerability_to_soft (n:m)
+map:vulnerability_to_soft__link a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:vulnerability;
+	d2rq:property vocab:vulnerability_to_soft;
+	d2rq:refersToClassMap map:soft;
+	d2rq:join "vulnerability_to_soft.vulnerability_id => vulnerability.vulnerability_id";
+	d2rq:join "vulnerability_to_soft.soft_id => soft.soft_id";
+	.
+
+# Table vulneraibilty_to_cvss (n:m)
+map:vulneraibilty_to_cvss__link a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:vulnerability;
+	d2rq:property vocab:vulneraibilty_to_cvss;
+	d2rq:refersToClassMap map:cvss;
+	d2rq:join "vulneraibilty_to_cvss.vulnerability_id => vulnerability.vulnerability_id";
+	d2rq:join "vulneraibilty_to_cvss.cvss_id => cvss.cvss_id";
+	.
+
