@@ -1,0 +1,264 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns="http://www.ida.liu.se/~iislab/projects/secont/SecurityViews.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:sec="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xml:base="http://www.ida.liu.se/~iislab/projects/secont/SecurityViews.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl"/>
+    <owl:imports rdf:resource="http://purl.org/dc/elements/1.1/"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="CountermeasureByConfidentiality">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="CountermeasureByGoal"/>
+    </rdfs:subClassOf>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#Countermeasure"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#protects"/>
+            <owl:someValuesFrom rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#_Confidentiality"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="ThreatViews"/>
+  <owl:Class rdf:ID="ThreatByAsset">
+    <rdfs:subClassOf rdf:resource="#ThreatViews"/>
+  </owl:Class>
+  <owl:Class rdf:ID="CountermeasureByIntegrity">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#CountermeasureByGoal"/>
+    </rdfs:subClassOf>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#Countermeasure"/>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#_Integrity"/>
+            <owl:onProperty rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#protects"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="ConfidentialityOfData">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="CountermeasureViews"/>
+    </rdfs:subClassOf>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#protects"/>
+            <owl:someValuesFrom>
+              <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                  <rdf:Description rdf:about="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#_Confidentiality"/>
+                  <rdf:Description rdf:about="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#_Data"/>
+                </owl:intersectionOf>
+              </owl:Class>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+          <rdf:Description rdf:about="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#Countermeasure"/>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="CountermeasureByNetworkLayerPacket">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="CountermeasureByData"/>
+    </rdfs:subClassOf>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#Countermeasure"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#protects"/>
+            <owl:someValuesFrom rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#_NetworkLayerPacket"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="#CountermeasureByData">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#Countermeasure"/>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#_Data"/>
+            <owl:onProperty rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#protects"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="CountermeasureByTechnology"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ThreatByAuthentication">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ThreatByGoal"/>
+    </rdfs:subClassOf>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#Threat"/>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#_Authentication"/>
+            <owl:onProperty rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#threatens"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="#CountermeasureByGoal">
+    <rdfs:subClassOf rdf:resource="#CountermeasureViews"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ThreatByIntegrity">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#Threat"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#threatens"/>
+            <owl:someValuesFrom rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#_Integrity"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ThreatByGoal"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="CountermeasureByAuthentication">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#Countermeasure"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#protects"/>
+            <owl:someValuesFrom rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#_Authentication"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="#CountermeasureByGoal"/>
+  </owl:Class>
+  <owl:Class rdf:ID="CountermeasureByAsset">
+    <rdfs:subClassOf rdf:resource="#CountermeasureViews"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ThreatByData">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#Threat"/>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#_Data"/>
+            <owl:onProperty rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#threatens"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ThreatByTechnology"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#CountermeasureByTechnology">
+    <rdfs:subClassOf rdf:resource="#CountermeasureByAsset"/>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#Countermeasure"/>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#_Technology"/>
+            <owl:onProperty rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#protects"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="ThreatByNetworkLayerPacket">
+    <rdfs:subClassOf rdf:resource="#ThreatByData"/>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#Threat"/>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#_NetworkLayerPacket"/>
+            <owl:onProperty rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#threatens"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="#ThreatByTechnology">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#Threat"/>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#_Technology"/>
+            <owl:onProperty rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#threatens"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="#ThreatByAsset"/>
+  </owl:Class>
+  <owl:Class rdf:about="#ThreatByGoal">
+    <rdfs:subClassOf rdf:resource="#ThreatViews"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ThreatByConfidentialitySimilars">
+    <rdfs:subClassOf rdf:resource="#ThreatByGoal"/>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#Threat"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#threatens"/>
+            <owl:someValuesFrom rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#_ConfidentialitySimilars"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="ThreatByConfidentiality">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#Threat"/>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#_Confidentiality"/>
+            <owl:onProperty rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#threatens"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="#ThreatByGoal"/>
+  </owl:Class>
+  <owl:Class rdf:ID="CountermeasureByConfidentialitySimilars">
+    <rdfs:subClassOf rdf:resource="#CountermeasureByGoal"/>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#Countermeasure"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#protects"/>
+            <owl:someValuesFrom rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#_ConfidentialitySimilars"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 2.1, Build 284)  http://protege.stanford.edu -->

@@ -1,0 +1,324 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns="http://www.ida.liu.se/~iislab/projects/secont/SourceCodeAnalysis.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:sec="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xml:base="http://www.ida.liu.se/~iislab/projects/secont/SourceCodeAnalysis.owl">
+  <owl:Ontology rdf:about="">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This ontology describes memory protection against buffer overflows using the security ontology.</rdfs:comment>
+    <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Almut Herzog, almhe@ida.liu.se</dc:creator>
+    <owl:imports rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl"/>
+    <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.ida.liu.se/~johwi/research_publications/licentiate_thesis.pdf</dc:source>
+    <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >John Wilander, johwi@ida.liu.se</dc:contributor>
+    <owl:imports rdf:resource="http://purl.org/dc/elements/1.1/"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="Eau_Claire">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The tool translates C code into so called guarded commands, enhanced with exceptions, assertions, assume statements and erroneous states.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Inter-proceduralDF"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Inter-proceduralCF"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Intra-proceduralCF"/>
+    </rdfs:subClassOf>
+    <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://ieeexplore.ieee.org/iel5/7873/21681/01004369.pdf</dc:source>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Intra-proceduralDF"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#_Stack"/>
+  <owl:Class rdf:ID="ControlFlow">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="SyntaxSemanticAnalysis"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="StackReturnAddress">
+    <rdfs:subClassOf rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#DataOnVolatileMedia"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#Stack"/>
+        <owl:onProperty rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#residesOn"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MOPS">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >checks ordering constraints such as dropping of privileges and race conditions in file accesses. </rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Intra-proceduralCF"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Inter-proceduralCF"/>
+    </rdfs:subClassOf>
+    <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.eecs.berkeley.edu/Pubs/TechRpts/2002/CSD-02-1197.pdf</dc:source>
+  </owl:Class>
+  <owl:Class rdf:about="#Inter-proceduralCF">
+    <rdfs:subClassOf rdf:resource="#ControlFlow"/>
+  </owl:Class>
+  <owl:Class rdf:about="#SyntaxSemanticAnalysis">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="C-CodeAnalysis"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Intra-proceduralCF">
+    <rdfs:subClassOf rdf:resource="#ControlFlow"/>
+  </owl:Class>
+  <owl:Class rdf:ID="DataFlow">
+    <rdfs:subClassOf rdf:resource="#SyntaxSemanticAnalysis"/>
+  </owl:Class>
+  <owl:Class rdf:ID="RATS">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Rough Auditing Tool for Security
+scans C, C++, Perl, PHP, Python</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="LexicalAnalysis"/>
+    </rdfs:subClassOf>
+    <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.securesw.com/rats/</dc:source>
+  </owl:Class>
+  <owl:Class rdf:ID="ITS4">
+    <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://doi.ieeecomputersociety.org/10.1109/ACSAC.2000.898880</dc:source>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#LexicalAnalysis"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >It's the Software Stupid! Security Scanner
+A static analysis tool for detecting security vulnerabilities in C and C++ code. (Wil05)</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="FunctionPointer">
+    <rdfs:subClassOf rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#DataOnVolatileMedia"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#residesOn"/>
+        <owl:someValuesFrom rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#Stack"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Intra-proceduralDF">
+    <rdfs:subClassOf rdf:resource="#DataFlow"/>
+  </owl:Class>
+  <owl:Class rdf:ID="StackBasePointer">
+    <rdfs:subClassOf rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#DataOnVolatileMedia"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#Stack"/>
+        <owl:onProperty rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#residesOn"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="_FunctionPointer">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#CountermeasureProtectsGoalOfAssetThroughType"/>
+          <owl:Restriction>
+            <owl:allValuesFrom rdf:resource="#FunctionPointer"/>
+            <owl:onProperty rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#hasAsset"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#_Integrity"/>
+  <owl:Class rdf:about="#Inter-proceduralDF">
+    <rdfs:subClassOf rdf:resource="#DataFlow"/>
+  </owl:Class>
+  <owl:Class rdf:ID="StackReturnAddress_">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:allValuesFrom rdf:resource="#StackReturnAddress"/>
+            <owl:onProperty rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#_hasAsset"/>
+          </owl:Restriction>
+          <rdf:Description rdf:about="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#ThreatThreatensGoalOfAsset"/>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="Splint">
+    <rdfs:subClassOf rdf:resource="#Intra-proceduralDF"/>
+    <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.splint.org/</dc:source>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Uses programmer provided semantic comments, so called annotations, to perform static analysis on the syntactic level. (Wil05)</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="DataAliasing"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Intra-proceduralCF"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="NeedsCodeAnnotations"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#C-CodeAnalysis">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Also C++ code analysis.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#SourceCodeAnalysis"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Cqual">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="TypeConversionInformation"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >uses constraint-based type inference</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#DataAliasing"/>
+    </rdfs:subClassOf>
+    <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.cs.umd.edu/~jfoster/cqual/</dc:source>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#NeedsCodeAnnotations"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Intra-proceduralDF"/>
+  </owl:Class>
+  <owl:Class rdf:about="#TypeConversionInformation">
+    <rdfs:subClassOf rdf:resource="#DataFlow"/>
+  </owl:Class>
+  <owl:Class rdf:ID="StackBasePointer_">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#_hasAsset"/>
+            <owl:allValuesFrom rdf:resource="#StackBasePointer"/>
+          </owl:Restriction>
+          <rdf:Description rdf:about="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#ThreatThreatensGoalOfAsset"/>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="Flawfinder">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >similar to ITS4 and RATS</rdfs:comment>
+    <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.dwheeler.com/flawfinder/</dc:source>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#LexicalAnalysis"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Mjolnir">
+    <rdfs:subClassOf rdf:resource="#Inter-proceduralCF"/>
+    <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://ieeexplore.ieee.org/iel5/7667/20963/00972661.pdf</dc:source>
+    <rdfs:subClassOf rdf:resource="#Inter-proceduralDF"/>
+    <rdfs:subClassOf rdf:resource="#Intra-proceduralCF"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >uses dependence graphs and constraint solving to find buffer overflows in C code.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#DataAliasing"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Intra-proceduralDF"/>
+  </owl:Class>
+  <owl:Class rdf:ID="PointerAnalysis">
+    <rdfs:subClassOf rdf:resource="#DataFlow"/>
+  </owl:Class>
+  <owl:Class rdf:ID="xgcc-Metal">
+    <rdfs:subClassOf rdf:resource="#Intra-proceduralDF"/>
+    <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://ieeexplore.ieee.org/iel5/7873/21681/01004368.pdf</dc:source>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >With the compiler extension xgcc and extension language Metal code is statically analysed for input validation errors on integer variables.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Inter-proceduralCF"/>
+    <rdfs:subClassOf rdf:resource="#Intra-proceduralCF"/>
+    <rdfs:subClassOf rdf:resource="#Inter-proceduralDF"/>
+  </owl:Class>
+  <owl:Class rdf:about="#NeedsCodeAnnotations">
+    <rdfs:subClassOf rdf:resource="#SyntaxSemanticAnalysis"/>
+  </owl:Class>
+  <owl:Class rdf:ID="BOON">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Buffer Overrun deteciON
+specific for string buffer overflows</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Inter-proceduralDF"/>
+    <rdfs:subClassOf rdf:resource="#Intra-proceduralDF"/>
+    <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://now.cs.berkeley.edu/~daw/papers/overruns-ndss00.pdf</dc:source>
+  </owl:Class>
+  <owl:Class rdf:ID="IPSSA">
+    <rdfs:subClassOf rdf:resource="#Inter-proceduralCF"/>
+    <rdfs:subClassOf rdf:resource="#TypeConversionInformation"/>
+    <rdfs:subClassOf rdf:resource="#PointerAnalysis"/>
+    <rdfs:subClassOf rdf:resource="#Intra-proceduralCF"/>
+    <rdfs:subClassOf rdf:resource="#Inter-proceduralDF"/>
+    <rdfs:subClassOf rdf:resource="#Intra-proceduralDF"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#DataAliasing"/>
+    </rdfs:subClassOf>
+    <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://portal.acm.org/ft_gateway.cfm%3Fid%3D940114%26type%3Dpdf%26dl%3DGUIDE%26dl%3DACM%26CFID%3D11111111%26CFTOKEN%3D2222222</dc:source>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#_Heap"/>
+  <owl:Class rdf:about="#LexicalAnalysis">
+    <rdfs:subClassOf rdf:resource="#C-CodeAnalysis"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ReturnAddressOverflow">
+    <rdfs:subClassOf rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#StackOverflow"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#StackReturnAddress_"/>
+        <owl:onProperty rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#threatens"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The most common buffer overflow where a local buffer allocated on the stack is overflown with data so that eventually the return address is overwritten. This can redirect the program flow to attack code. (adapted from Wil05)</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="FunctionPointer_">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#ThreatThreatensGoalOfAsset"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#_hasAsset"/>
+            <owl:allValuesFrom rdf:resource="#FunctionPointer"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="_StackReturnAddress">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#CountermeasureProtectsGoalOfAssetThroughType"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#hasAsset"/>
+            <owl:allValuesFrom rdf:resource="#StackReturnAddress"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="#DataAliasing">
+    <rdfs:subClassOf rdf:resource="#DataFlow"/>
+  </owl:Class>
+  <owl:Class rdf:ID="_StackBasePointer">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#hasAsset"/>
+            <owl:allValuesFrom rdf:resource="#StackBasePointer"/>
+          </owl:Restriction>
+          <rdf:Description rdf:about="http://www.ida.liu.se/~iislab/projects/secont/Security.owl#CountermeasureProtectsGoalOfAssetThroughType"/>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 2.2, Build 311)  http://protege.stanford.edu -->
