@@ -1,10 +1,5 @@
 # coding:utf-8
 """
-Program: 语言模型的简单实现
-Description: 简单实现一个N元的语言模型，其中N是可以进行设置的参数.
-Author: Flyaway - flyaway1217@gmail.com
-Date: 2014-01-16 19:23:29
-Last modified: 2014-01-16 21:54:08
 Python release: 3.2.3
 """
 
