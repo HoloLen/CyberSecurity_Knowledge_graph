@@ -1,0 +1,156 @@
+############
+# author: Kent O'Sullivan
+# purpose: The CESO is the binding association between the CST and the TSO. Is where effects are mapped and relationships to other domains are defined. 
+############
+
+#     _______     ______  ______ _____    ______ ______ ______ ______ _____ _______ _____    _____ _____ __  __ _    _ _            _______ _____ ____  _   _    ____  _   _ _______ ____  _      ____   _______     __
+#    / ____\ \   / /  _ \|  ____|  __ \  |  ____|  ____|  ____|  ____/ ____|__   __/ ____|  / ____|_   _|  \/  | |  | | |        /\|__   __|_   _/ __ \| \ | |  / __ \| \ | |__   __/ __ \| |    / __ \ / ____\ \   / /
+#   | |     \ \_/ /| |_) | |__  | |__) | | |__  | |__  | |__  | |__ | |       | | | (___   | (___   | | | \  / | |  | | |       /  \  | |    | || |  | |  \| | | |  | |  \| |  | | | |  | | |   | |  | | |  __ \ \_/ / 
+#   | |      \   / |  _ <|  __| |  _  /  |  __| |  __| |  __| |  __|| |       | |  \___ \   \___ \  | | | |\/| | |  | | |      / /\ \ | |    | || |  | | . ` | | |  | | . ` |  | | | |  | | |   | |  | | | |_ | \   /  
+#   | |____   | |  | |_) | |____| | \ \  | |____| |    | |    | |___| |____   | |  ____) |  ____) |_| |_| |  | | |__| | |____ / ____ \| |   _| || |__| | |\  | | |__| | |\  |  | | | |__| | |___| |__| | |__| |  | |   
+#    \_____|  |_|  |____/|______|_|  \_\ |______|_|    |_|    |______\_____|  |_| |_____/  |_____/|_____|_|  |_|\____/|______/_/    \_\_|  |_____\____/|_| \_|  \____/|_| \_|  |_|  \____/|______\____/ \_____|  |_|   
+#                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+
+@prefix core:    	<http://www.accs.unsw.adfa.edu.au/2015/09/05/core/core#> .
+@prefix ceso:   	<http://www.accs.unsw.adfa.edu.au/2015/09/05/domain/cyber/ceso#> .
+@prefix cst:   		<http://www.accs.unsw.adfa.edu.au/2015/09/05/domain/cyber/CyberSimulationTerrain/cst#> .
+@prefix tso:		<http://www.accs.unsw.adfa.edu.au/2015/09/05/domain/cyber/ThreatSimulationOntology/tso#> .
+@prefix org:    	<http://www.accs.unsw.adfa.edu.au/2015/09/05/domain/organisational/organisational#> .
+@prefix event:    	<http://www.accs.unsw.adfa.edu.au/2015/09/05/core/event#> .
+
+
+@prefix rdf:    	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:     	<http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    	<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:		<http://www.w3.org/2002/07/owl#> .
+
+#     ____   _          _      ____    ____    _____   ____  
+#    / ___| | |        / \    / ___|  / ___|  | ____| / ___| 
+#   | |     | |       / _ \   \___ \  \___ \  |  _|   \___ \ 
+#   | |___  | |___   / ___ \   ___) |  ___) | | |___   ___) |
+#    \____| |_____| /_/   \_\ |____/  |____/  |_____| |____/ 
+#                                                            
+
+ceso:CyberEffect
+	rdf:type rdfs:Class ;
+	rdfs:comment "Cyber Effect Superclass, Use Subclasses"^^xsd:string ;
+	rdfs:label "Cyber Effect"^^xsd:string .
+
+##The following are cyberEffect Subclasses. Effects are based on the MITRE Definitions: 
+###(S. Musman, M. Tanner, A. Temin, E. Elsaesser, and L. Loren, "Computing the impact of cyber attacks on complex missions," in Systems Conference (SysCon), 2011 IEEE International, 2011, pp. 46-51.)
+#### The severity and duration of the effect is defined in the 'INCIDENT' class of the Event Domain. 
+
+ceso:DegradeEffect
+	rdf:type ceso:CyberEffect ;
+	rdfs:comment "To Degrade is to deny access or operation of a targeted function to a level represented as a percentage of capacity."^^xsd:string ;
+	rdfs:label "Degrade Effect"^^xsd:string .
+
+ceso:InterruptEffect
+	rdf:type ceso:CyberEffect ;
+	rdfs:comment "To Interrupt is to deny access or operation of a targeted function for a finite period of time with no lasting effect."^^xsd:string ;
+	rdfs:label "Interrupt Effect"^^xsd:string .
+
+ceso:ModifyEffect
+	rdf:type ceso:CyberEffect ;
+	rdfs:comment "To Modify is to manipulate or distort trusted information on a system."^^xsd:string ;
+	rdfs:label "Modify Effect"^^xsd:string .
+
+ceso:FabricateEffect
+	rdf:type ceso:CyberEffect ;
+	rdfs:comment "To Fabricate is to falsify information on a target system for the purpose of decieving users or reducing system trust ."^^xsd:string ;
+	rdfs:label "Degrade Effect"^^xsd:string .
+
+ceso:UnauthorisedUseEffect
+	rdf:type ceso:CyberEffect ;
+	rdfs:comment "To conduct Unauthorised Use have a node or function controlled by a person without the correct permissions or authority."^^xsd:string ;
+	rdfs:label "Unauthorised Use Effect"^^xsd:string .
+
+ceso:InterceptEffect
+	rdf:type ceso:CyberEffect ;
+	rdfs:comment "To Intercept is to view data or information moving between nodes without appropriate permissions or authorisation."^^xsd:string ;
+	rdfs:label "Intercept Effect"^^xsd:string .
+
+
+
+
+
+#    ____    ____     ___    ____    _____   ____    _____   ___   _____   ____  
+#   |  _ \  |  _ \   / _ \  |  _ \  | ____| |  _ \  |_   _| |_ _| | ____| / ___| 
+#   | |_) | | |_) | | | | | | |_) | |  _|   | |_) |   | |    | |  |  _|   \___ \ 
+#   |  __/  |  _ <  | |_| | |  __/  | |___  |  _ <    | |    | |  | |___   ___) |
+#   |_|     |_| \_\  \___/  |_|     |_____| |_| \_\   |_|   |___| |_____| |____/ 
+#    
+
+
+
+
+
+
+
+
+#    ____    _____   _          _      _____   ___    ___    _   _   ____    _   _   ___   ____    ____  
+#   |  _ \  | ____| | |        / \    |_   _| |_ _|  / _ \  | \ | | / ___|  | | | | |_ _| |  _ \  / ___| 
+#   | |_) | |  _|   | |       / _ \     | |    | |  | | | | |  \| | \___ \  | |_| |  | |  | |_) | \___ \ 
+#   |  _ <  | |___  | |___   / ___ \    | |    | |  | |_| | | |\  |  ___) | |  _  |  | |  |  __/   ___) |
+#   |_| \_\ |_____| |_____| /_/   \_\   |_|   |___|  \___/  |_| \_| |____/  |_| |_| |___| |_|     |____/ 
+#                                                                                                        		 					
+
+### syntax: portkey_ontologyFrom-ontologyTO_ClassFrom-ClassTo
+
+
+ceso:portkey_tso-cst_ExploitTarget-SoftwareVulnerability
+	rdf:type rdf:Property ;
+	rdfs:comment "Link that associates the TSO conceptual ExploitTarget with the vulnerability targeted on the CST"^^xsd:string ;
+	rdfs:label "Exploit Target to Software Vulnerability"^^xsd:string ;
+	rdfs:domain tso:ExploitTarget ;
+	rdfs:domain cst:SoftwareVulnerability .
+
+ceso:portkey_tso-ceso_Exploit-CyberEffect
+	rdf:type rdf:Property ;
+	rdfs:comment "Link between the Exploits in the TSO and the Effects that they Cause."^^xsd:string ;
+	rdfs:label "Causes Cyber Effect"^^xsd:string ;
+	rdfs:domain tso:Exploit ;
+	rdfs:range ceso:CyberEffect .
+
+ceso:portkey_tso-org_Campaign-ThreatOrganisation
+	rdf:type rdf:Property ;
+	rdfs:comment "The link between the Campaign in the TSO anf the Threat Organisation that is involved in the campaign"^^xsd:string ;
+	rdfs:label "Attributed to Organisation"^^xsd:string ;
+	rdfs:domain tso:Campaign ;
+	rdfs:range org:ThreatOrganisation .
+
+ceso:portkey_tso-org_ThreatActor-ThreatOrganisation
+	rdf:type rdf:Property ;
+	rdfs:comment "Link between the TSO Threat actor and the organisation they are a member of"^^xsd:string ;
+	rdfs:label "is Member of Organisation"^^xsd:string ;
+	rdfs:domain tso:ThreatActor ;
+	rdfs:range org:ThreatOrganisation .		
+
+ceso:portkey_event-tso_Incident-COA
+	rdf:type rdf:Property ;
+	rdfs:comment "The link beteen an incident in the event domain and a possible COA to remediate it"^^xsd:string ;
+	rdfs:label "Remedial Course of Action"^^xsd:string ;
+	rdfs:domain event:Incident ;
+	rdfs:range tso:CourseOfAction .
+
+ceso:portkey_event-tso_Incident-Exploit
+	rdf:type rdf:Property ;
+	rdfs:comment "The link between an incident and the exploit that caused it"^^xsd:string ;
+	rdfs:label "Incident Caused By"^^xsd:string ;
+	rdfs:domain event:Incident ;
+	rdfs:range tso:Exploit .
+
+ceso:portkey_event-cst_Incident-Node
+	rdf:type rdf:Property ;
+	rdfs:comment "The link between the incident and the victim it occured on"^^xsd:string ;
+	rdfs:label "Victim"^^xsd:string ;
+	rdfs:domain event:Incident ;
+	rdfs:range cst:Node . 		
+
+ceso:portkey_event-ceso_Incident-CyberEffect
+	rdf:type rdf:Property ;
+	rdfs:comment "The link between the incident and an effect it causes"^^xsd:string ;
+	rdfs:label "causes cyber effect"^^xsd:string ;
+	rdfs:domain event:Incident ;
+	rdfs:range ceso:CyberEffect . 		
+

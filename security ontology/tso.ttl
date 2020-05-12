@@ -1,0 +1,258 @@
+############
+# author: Kent O'Sullivan
+# purpose: 	The Threat Simulation Ontology has been designed to be syntactically and Semnatically similar to the Structured Threat Information eXpression (STIX) (See: https://stixproject.github.io/). 
+#			This will greatly enhance interoperability. It is used to model the red-team actions in the CESO and to provide 'for-information' context to the CESO. Intent is to populate largely from STIX Reports. 
+# worldview: The red team perspective on a blue-team network. Assumes some degree of omniscience over the network and hence works less in observables and indicators than comparing established attacks agaisnt given targets. 
+############
+
+#    _______ _    _ _____  ______       _______    _____ _____ __  __ _    _ _            _______ _____ ____  _   _    ____  _   _ _______ ____  _      ____   _______     __
+#   |__   __| |  | |  __ \|  ____|   /\|__   __|  / ____|_   _|  \/  | |  | | |        /\|__   __|_   _/ __ \| \ | |  / __ \| \ | |__   __/ __ \| |    / __ \ / ____\ \   / /
+#      | |  | |__| | |__) | |__     /  \  | |    | (___   | | | \  / | |  | | |       /  \  | |    | || |  | |  \| | | |  | |  \| |  | | | |  | | |   | |  | | |  __ \ \_/ / 
+#      | |  |  __  |  _  /|  __|   / /\ \ | |     \___ \  | | | |\/| | |  | | |      / /\ \ | |    | || |  | | . ` | | |  | | . ` |  | | | |  | | |   | |  | | | |_ | \   /  
+#      | |  | |  | | | \ \| |____ / ____ \| |     ____) |_| |_| |  | | |__| | |____ / ____ \| |   _| || |__| | |\  | | |__| | |\  |  | | | |__| | |___| |__| | |__| |  | |   
+#      |_|  |_|  |_|_|  \_\______/_/    \_\_|    |_____/|_____|_|  |_|\____/|______/_/    \_\_|  |_____\____/|_| \_|  \____/|_| \_|  |_|  \____/|______\____/ \_____|  |_|   
+#                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+
+@prefix core:   <http://www.accs.unsw.adfa.edu.au/2015/09/05/core/core#> .
+@prefix tso:	<http://www.accs.unsw.adfa.edu.au/2015/09/05/domain/cyber/ThreatSimulationOntology/tso#> .
+
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:	<http://www.w3.org/2002/07/owl#> .
+ 
+####################              
+#Classes in the Domain:
+####################
+
+#     ____   _          _      ____    ____    _____   ____  
+#    / ___| | |        / \    / ___|  / ___|  | ____| / ___| 
+#   | |     | |       / _ \   \___ \  \___ \  |  _|   \___ \ 
+#   | |___  | |___   / ___ \   ___) |  ___) | | |___   ___) |
+#    \____| |_____| /_/   \_\ |____/  |____/  |_____| |____/ 
+#                                                            
+
+tso:Campaign
+	rdf:type rdfs:Class ;
+	rdfs:comment "Campaigns are instances of ThreatActors pursuing an intent, as observed through sets of Incidents and/or TTP, potentially across organizations. In a structured sense, Campaigns may consist of the suspected intended effect of the adversary, the related TTP leveraged within the Campaign, the related Incidents believed to be part of the Campaign, attribution to the ThreatActors believed responsible for the Campaign, other Campaigns believed related to the Campaign, confidence in the assertion of aggregated intent and characterization of the Campaign, activity taken in response to the Campaign, source of the Campaign information, handling guidance, etc."^^xsd:string ;
+	rdfs:label "Campaign"^^xsd:string .
+
+tso:CourseOfAction
+	rdf:type rdfs:Class ;
+	rdfs:comment "CoursesOfAction are specific measures to be taken to address threat whether they are corrective or preventative to address ExploitTargets, or responsive to counter or mitigate the potential impacts of Incidents. In a structured sense, COA consist of their relevant stage in cyber threat management (e.g., remedy of an ExploitTarget or response to an Incident), type of COA, description of COA, objective of the COA, structured representation of the COA (e.g., IPS rule or automated patch/remediation), the likely impact of the COA, the likely cost of the COA, the estimated efficacy of the COA, observable parameters for the COA, handling guidance, etc."^^xsd:string ;	
+	rdfs:label "Course of Action"^^xsd:string .
+
+tso:ExploitTarget
+	rdf:type rdfs:Class ;
+	rdfs:comment "ExploitTargets are vulnerabilities or weaknesses in software, systems, networks or configurations that are targeted for exploitation by the TTP of a ThreatActor. In a structured sense, ExploitTargets consist of vulnerability identifications or characterizations, weakness identifications or characterizations, configuration identifications or characterizations, potential Courses of Action, source of the ExploitTarget information, handling guidance, etc."^^xsd:string ;
+	rdfs:label "Exploit Target" .
+
+tso:Exploit 
+	rdf:type rdfs:Class ;
+	rdfs:comment "The exploit that is used by the attacker to target a vulnerability. Linked to an exploitDB id or similar. Has a skill level required for use."^^xsd:string ;
+	rdfs:label "Exploit"^^xsd:string .	
+
+tso:ThreatActor 
+	rdf:type rdfs:Class ;
+	rdfs:comment "ThreatActors are characterizations of malicious actors (or adversaries) representing a cyber attack threat including presumed intent and historically observed behavior. In a structured sense, ThreatActors consist of a characterization of identity, suspected motivation, suspected intended effect, historically observed TTP used by the ThreatActor, historical Campaigns believed associated with the ThreatActor, other ThreatActors believed associated with the ThreatActor, handling guidance, confidence in the asserted characterization of the ThreatActor, source of the ThreatActor information, etc."^^xsd:string ;
+	rdfs:label "Threat Actor" .
+
+
+#    ____    ____     ___    ____    _____   ____    _____   ___   _____   ____  
+#   |  _ \  |  _ \   / _ \  |  _ \  | ____| |  _ \  |_   _| |_ _| | ____| / ___| 
+#   | |_) | | |_) | | | | | | |_) | |  _|   | |_) |   | |    | |  |  _|   \___ \ 
+#   |  __/  |  _ <  | |_| | |  __/  | |___  |  _ <    | |    | |  | |___   ___) |
+#   |_|     |_| \_\  \___/  |_|     |_____| |_| \_\   |_|   |___| |_____| |____/ 
+#                                                                                
+
+### Regarding Campaigns
+
+tso:campaignTitle
+	rdf:type rdf:Property;
+	rdfs:comment "The Title field provides a simple title for this Campaign."^^xsd:string ;
+	rdfs:label "Campaign Title"^^xsd:string ;
+	rdfs:domain tso:Campaign ;
+	rdfs:range xsd:string .
+
+tso:campaignDescription
+	rdf:type rdf:Property ;
+	rdfs:comment "A short, unstructured, text description of this Campaign"^^xsd:string ;
+	rdfs:label "Campaign Description"^^xsd:string ;
+	rdfs:domain tso:Campaign ;
+	rdfs:range xsd:string .
+
+###Regarding Courses of Action
+
+tso:courseOfActionTitle
+	rdf:type rdf:Property;
+	rdfs:comment "The Title field provides a simple title for this CourseOfAction."^^xsd:string ;
+	rdfs:label "Course of Action Title"^^xsd:string ;
+	rdfs:domain tso:CourseOfAction ;
+	rdfs:range xsd:string .
+
+tso:courseOfActionDescription
+	rdf:type rdf:Property ;
+	rdfs:comment "A short, unstructured, text description of this Course of Action"^^xsd:string ;
+	rdfs:label "Course of Action Description"^^xsd:string ;
+	rdfs:domain tso:CourseOfAction ;
+	rdfs:range xsd:string .
+
+tso:courseOfActionObjective
+	rdf:type rdf:Property ;
+	rdfs:comment " characterizes the objective of this CourseOfAction"^^xsd:string ;
+	rdfs:label "Course of Action Objective"^^xsd:string ;
+	rdfs:domain tso:CourseOfAction ;
+	rdfs:range xsd:string .
+
+tso:courseOfActionImpact
+	rdf:type rdf:Property ;
+	rdfs:comment "Characterizes the estimated impact of applying this CourseOfAction as 'LOW' 'MEDIUM' or 'HIGH' "^^xsd:string ;
+	rdfs:label "Course of Action Impact"^^xsd:string ;
+	rdfs:domain tso:CourseOfAction ;
+	rdfs:range xsd:string .
+
+tso:courseOfActionCost
+	rdf:type rdf:Property ;
+	rdfs:comment "Characterizes the estimated Cost of applying this CourseOfAction as 'LOW' 'MEDIUM' or 'HIGH' "^^xsd:string ;
+	rdfs:label "Course of Action Cost"^^xsd:string ;
+	rdfs:domain tso:CourseOfAction ;
+	rdfs:range xsd:string .	
+
+tso:courseOfActionEfficacy
+	rdf:type rdf:Property ;
+	rdfs:comment "Characterizes the estimated effectiveness of applying this CourseOfAction as 'LOW' 'MEDIUM' or 'HIGH' "^^xsd:string ;
+	rdfs:label "Course of Action Efficacy"^^xsd:string ;
+	rdfs:domain tso:CourseOfAction ;
+	rdfs:range xsd:string .
+
+### Regarding Exploit Targets
+
+tso:exploitTargetTitle
+	rdf:type rdf:Property;
+	rdfs:comment "The Title field provides a simple title for this Exploit Target."^^xsd:string ;
+	rdfs:label "Exploit Target Title"^^xsd:string ;
+	rdfs:domain tso:ExploitTarget ;
+	rdfs:range xsd:string .
+
+tso:exploitTargetDescription
+	rdf:type rdf:Property ;
+	rdfs:comment "A short, unstructured, text description of this Exploit Target"^^xsd:string ;
+	rdfs:label "Exploit Target Description"^^xsd:string ;
+	rdfs:domain tso:ExploitTarget ;
+	rdfs:range xsd:string .
+
+### Regadring Threat Actors
+
+tso:threatActorTitle
+	rdf:type rdf:Property;
+	rdfs:comment "The Title field provides a simple title for this Threat Actor."^^xsd:string ;
+	rdfs:label "Threat Actor Title"^^xsd:string ;
+	rdfs:domain tso:ThreatActor ;
+	rdfs:range xsd:string .
+
+tso:threatActorDescription
+	rdf:type rdf:Property ;
+	rdfs:comment "A short, unstructured, text description of this Threat Actor"^^xsd:string ;
+	rdfs:label "Threat Actor Description"^^xsd:string ;
+	rdfs:domain tso:ThreatActor ;
+	rdfs:range xsd:string .
+
+tso:threatActorSkillLevel
+	rdf:type rdf:Property ;
+	rdfs:comment "Specifies the Skill Level of this Threat Actor. The sophistication of a threat actor reflects their skill level and hence the tools that they can access. Specified using A 10 to 1 score where 10 is least sophisticated and 1 is most sophisticatesd. This is to allow effective maping to the CVSS exploitatbility scores that define the eploitability of vulnerabilities and the skill required to use exploits. "^^xsd:string ;	
+	rdfs:label "Threat Actor Skill Level"^^xsd:string ;
+	rdfs:domain tso:ThreatActor ;
+	rdfs:range xsd:string .
+
+tso:threatActorMotivation
+	rdf:type rdf:Property ;
+	rdfs:comment "characterizes the motivations of this threat actor. It may be used multiple times to capture multiple motivations"^^xsd:string ;
+	rdfs:label "Threat Actor Motivation"^^xsd:string ;
+	rdfs:domain tso:ThreatActor ;
+	rdfs:range xsd:string .	
+
+### Regarding Exploits
+	#This is the most significant break from STIX Terminology. It has been implemented to reflect the different intent and operation of STIX and TSO. STIX is for threat intelligence, TSO if to suppport effects mapping. 
+
+tso:exploitTitle
+	rdf:type rdf:Property ;
+	rdfs:comment "The Title field provides a simple title for this Exploit."^^xsd:string ;
+	rdfs:label "Exloit Title"^^xsd:string ;
+	rdfs:domain tso:Exploit ;
+	rdfs:range xsd:string .
+
+tso:exploitDescription
+	rdf:type rdf:Property ;
+	rdfs:comment "A short, unstructured, text description of this Exploit"^^xsd:string ;
+	rdfs:label "Exploit Description"^^xsd:string ;
+	rdfs:domain tso:Exploit ;
+	rdfs:range xsd:string .
+
+tso:reqiredSkillLevel	
+	rdf:type rdf:Property ;
+	rdfs:comment "Skill level required to use the exploit. SKILL LEVEL IS MEASURED from 10 (Lowest) to 1 (Highest). This is to facilitate mapping to CVSS exploitability scores where 10 is the most exploitable (i.e. most vulnerable and easiest to exploit and requiring the lowest skill) and 1 is the least vulnerable, harder to exploit hence requires the most skill"^^xsd:string ;
+	rdfs:label "Required Skill Level"^^xsd:string ;
+	rdfs:domain tso:Exploit ;
+	rdfs:range tso:xsd:integer .
+
+#    ____    _____   _          _      _____   ___    ___    _   _   ____    _   _   ___   ____    ____  
+#   |  _ \  | ____| | |        / \    |_   _| |_ _|  / _ \  | \ | | / ___|  | | | | |_ _| |  _ \  / ___| 
+#   | |_) | |  _|   | |       / _ \     | |    | |  | | | | |  \| | \___ \  | |_| |  | |  | |_) | \___ \ 
+#   |  _ <  | |___  | |___   / ___ \    | |    | |  | |_| | | |\  |  ___) | |  _  |  | |  |  __/   ___) |
+#   |_| \_\ |_____| |_____| /_/   \_\   |_|   |___|  \___/  |_| \_| |____/  |_| |_| |___| |_|     |____/ 
+#                                                                                                        		 					
+
+#Campaign Domain Relations
+
+tso:attributedToThreatActor
+	rdf:type rdf:Property ;
+	rdfs:comment "A campaign is attributed to a given threat Actor"^^xsd:string ;
+	rdfs:label "Attributd to Threat Actor"^^xsd:string ;
+	rdfs:domain: tso:Campaign ;
+	rdfs:range tso:ThreatActor .
+
+tso:relatedExploit
+	rdf:type rdf:Property ;
+	rdfs:comment "A Campaig:n will typically use a consistent subset of Exploits. The association is useful for deducing which Exploits are likely to be used when facing a known campaign"^^xsd:string ;
+	rdfs:label "Includes use of Exploit"^^xsd:string ;
+	rdfs:domain tso:Campaign ;
+	rdfs:range tso:Exploit .
+
+# Threat Actor Domain Relations
+
+tso:usesExploit
+	rdf:type rdf:Class ;
+	rdfs:comment "A Threat actor uses a particular Exploit"^^xsd:string ;
+	rdfs:label "Uses Exploit"^^xsd:string ;
+	rdfs:domain tso:ThreatActor ;
+	rdfs:range tso:Exploit .
+
+#Exploit Domain Relations
+
+tso:targets 
+	rdf:type rdf:Property ;
+	rdfs:comment "An Exploit targets a vulnerability on an exploit target"^^xsd:string ;
+	rdfs:label "Targets"^^xsd:string ;
+	rdfs:domain tso:Exploit ;
+	rdfs:range tso:ExploitTarget .
+
+tso:preventativeCourseOfAction
+	rdf:type rdf:Property ;
+	rdfs:comment "Preventative Courses of actions are COAs that can be employed to prevent an exploit from working"^^xsd:string ;
+	rdfs:label "Preventative Course of Action"^^xsd:string ;
+	rdfs:domain tso:Exploit ;
+	rdfs:range tso:CourseOfAction .	
+
+#ExploitTarget Domain Relations
+
+tso:protectiveCourseOfAction
+	rdf:type rdf:Property ;
+	rdfs:comment "Protective course of action that could be used to Protect the exploit target"^^xsd:string ;
+	rdfs:label "Protective Course Of Action"^^xsd:string ;	
+	rdfs:domain tso:ExploitTarget ;
+	rdfs:range tso:CourseOfAction .
+
+	
+
+	
+ 
